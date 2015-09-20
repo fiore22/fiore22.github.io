@@ -6,10 +6,35 @@
 </head>
 <body> 
 
+<h1>Awesome fightinmg robots</h1>
 
-<p>Hello and welcome to my page</p>
+<p>Try to beat my robot by typing the best robot move!!</p>
 
+<form id="robot-fight">
+  <input id="robot-challenge" type="text" name="move" />
+  <input type="submit" value="Fight!" />
+</form>
 
+<script>
+function processForm(e) {
+    if (e.preventDefault) e.preventDefault();
+
+    value = document.getElementById("robot-challenge").value;
+	if (value=="punch") {
+	  alert("OOUFF! Knocked me right out!"); 
+	} else {
+	  alert("POW!! I punched you out of the park!!");
+	};
+    return false;
+}
+
+var form = document.getElementById('robot-fight');
+if (form.attachEvent) {
+    form.attachEvent("submit", processForm);
+} else {
+    form.addEventListener("submit", processForm);
+}
+</script>
 
 </body>
 </html>
